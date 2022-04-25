@@ -1,0 +1,59 @@
+{% load static %}
+
+
+{% block content %}
+<title>MFA Verification</title>
+<link rel="stylesheet" href="{% static 'css/modal1.css' %}">
+  
+  <div class="otp_modal">
+    
+    <div class="modal__details">
+      <img src="{% static 'images/logo-2.png' %}" alt="#" width="200"/>
+      <p class="modal__description" style="font-size:large;">Authenticate via 2FA</p>
+    </div>
+
+    <div box>
+        <div class="left_box"> 
+            
+            <form>
+                <h1 style="color:black"><center>Instructions!</center></h1><br><hr><br>
+                <h2 style="color:black">-> Download <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en_IN&gl=US" target="_blank">Google Authenticator</a> on your mobile.</h2>
+                <h2 style="color:black">-> Create a new account with setup key method.</h2>
+                <h2 style="color:black">-> Provide the required details (name, secret key).</h2>
+                <h2 style="color:black">-> Select time-based authentication.</h2>
+                <h2 style="color:black">-> Submit the generated key in the form.</h2>
+                <br><br>
+                <label style="color:black" for="token"><h2>Secret Token</h2></label>
+                <input type="text" id="secret" name="token" value={{secret}} readonly>
+                <div class="text-center">
+                  <input type="button" onclick="copySecret()" value="Copy Secret">Copy Secret</input>
+                </div>
+            </form>
+
+        </div>
+        <div class="right_box"> 
+            <form action="{% url 'mfaverification' %}" method="POST">
+              {% csrf_token %}
+                <br>
+                <label style="color:black" for="otp"><h2>Please enter generated OTP</h2></label>
+                <input type="hidden" name="secret" value="{{ secret }}" required>
+                <h3 style="color:red">{{error}}</h3>
+                <input type="text" id="otp" name="otp" placeholder="Enter OTP" required>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+  
+  </div>
+
+  <script>
+    function copySecret() {
+      var copyText = document.getElementById("secret");      
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Successfully copied TOTP secret token!");
+      return false;
+    }
+  </script>
+{% endblock %}

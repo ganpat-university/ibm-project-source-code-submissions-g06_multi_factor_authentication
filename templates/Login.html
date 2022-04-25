@@ -1,0 +1,96 @@
+
+<!doctype html>
+<html lang="en">
+
+{% load static %}
+<!-- Mirrored from preview.colorlib.com/theme/bootstrap/login-form-03/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Jan 2022 12:44:30 GMT -->
+<head>
+
+    <link rel="icon" href="{% static 'images/sym.png' %}" type="image/png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'all.css' %}" />
+<link rel="stylesheet" href="{% static 'css/captcha.css' %}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Site Metas -->
+    
+<title>Login | FinTrans</title>
+<body>
+<div class="half">
+<div class="bg order-1 order-md-2" style="background-image:url({% static 'images/bg.jpg' %})"></div>
+<div class="contents order-2 order-md-1">
+<div class="container">
+<div class="row align-items-center justify-content-center">
+<div class="col-md-6">
+<div class="form-block">
+<div class="text-center mb-5">
+<h3>Login to <strong>FinTrans</strong></h3>
+
+</div>
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <h5 class="text-danger">{{error}}</h5>
+    <h5 class="text-warning">Please Enter the Captcha below to Enable Login</h5>
+<div class="form-group first">
+<label for="username">UserName</label>
+<input type="text" class="form-control" placeholder="Your User-Name" id="username" name="username" required>
+</div>
+<div class="form-group last mb-3">
+<label for="password">Password</label>
+<input type="password" class="form-control" placeholder="Your Password" id="password" name="password" required>
+</div>
+<div class="wrapper mb-3">
+    <div class="captcha-area">
+        <div class="captcha-img">
+          <img src="{% static 'images/captcha-bg.png'%}" alt="Captch Background">
+          <span class="captcha"></span>
+        </div>
+        <button class="reload-btn"><i class="fas fa-redo-alt"></i></button>
+      </div>
+      <div class="input-area">
+        <input type="text" placeholder="Enter captcha" maxlength="6" spellcheck="false" required>
+        <button class="check-btn">Check</button>
+      </div>
+      <div class="status-text"></div>
+</div>
+    
+<div class="d-sm-flex mb-4 align-items-center">
+<label class="control control--checkbox mb-3 mb-sm-0"><span class="caption">Remember me</span>
+<input type="checkbox"/>
+<div class="control__indicator"></div>
+</label>
+<span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
+</div>
+<div class="already-account">
+    <span><a href="{% url 'register' %}" class="already-account">Don't have an account?</a></span>
+</div>
+<input id="btnsm" type="submit" value="Log In" class="btn btn-block btn-primary" disabled>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="{% static 'js/captcha.js' %}"></script>
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script><script>eval(mod_pagespeed_RSFvhpwpk0);</script>
+</body>
+<footer class="footer-distributed">
+    <div class="footer-left">
+        <h3><a href="{% url 'home' %}"><img src="{% static 'images/logo-2.PNG' %}"></a></h3>
+            <p class="footer-company-name" ><span>FinTrans © 2021</span></p>
+    </div>
+    <div class="footer-center">
+        <div>
+            <h4>Contact Us</h4>
+            <p><a href="mailto:support@fintrans.com">support@fintrans.com</a>
+            <p><span>00000 00000</span></p>
+            </p>
+        </div>
+    </div>
+</footer>
+</html>

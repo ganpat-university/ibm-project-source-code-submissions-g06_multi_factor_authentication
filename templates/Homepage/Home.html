@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+    <title>FinTrans</title>
+    
+    <link rel="icon" href="{% static 'images/sym.png' %}" type="image/png">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/pogo-slider.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+
+    <div id="preloader">
+        <div class="loader">
+            <img src="{% static 'images/loader-1.gif' %}" alt="#" />
+        </div>
+    </div>
+
+    <header class="top-header">
+        <div class="header_top">
+            
+            <div class="container">
+                <div class="row">
+                    <div class="logo_section">
+                        <a class="navbar-brand" href="#"><img src="{% static 'images/logo-2.png' %}" alt="image"></a>
+                    </div>
+                    <div class="site_information">
+                        <ul>
+                            <li><a href="mailto:support@fintrans.com"><img src="{% static 'images/mail_icon.png' %}" alt="#" />support@fintrans.com</a></li>
+                            <li><a href="tel:support@fintrans.com"><img src="{% static 'images/phone_icon.png' %}" alt="#" />+0000000000</a></li>
+                            <li><a class="join_bt" href="{% url 'register' %}">Register</a>
+                                <a class="join_bt" href="{% url 'login' %}">Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header_bottom">
+          <div class="container">
+            <div class="col-sm-12">
+                <div class="menu_orange_section" style="background: #ff880e;">
+                   <nav class="navbar header-nav navbar-expand-lg"> 
+                     <div class="menu_section">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link active" href="#">Home</a></li>
+                        <li><a class="nav-link" href="#">About</a></li>
+                        <li><a class="nav-link" href="#">Services</a></li>
+                        <li><a class="nav-link" href="#">News</a></li>
+                        <li><a class="nav-link" href="#">Contact</a></li>
+                    </ul>
+                </div>
+                     </div>
+                 </nav>
+                 <div class="search-box">
+                    <input type="text" class="search-txt" placeholder="Search">
+                    <a class="search-btn">
+                        <img src="{% static 'images/search_icon.png' %}" alt="#" />
+                    </a>
+                </div> 
+                </div>
+            </div>
+          </div>
+        </div>
+        
+    </header>
+
+    <div class="ulockd-home-slider">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="pogoSlider" id="js-main-slider">
+                    <div class="pogoSlider-slide" style="background-image:url({% static 'images/slide_img.png' %});">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="slide_text white_fonts">
+                                        <h3>Progress & Success<br><strong>Crypto</strong></h3>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pogoSlider-slide" style="background-image:url({% static 'images/slide_img.png' %});">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="slide_text white_fonts">
+                                        <h3>Save & Secure Future<br><strong>Fixed Deposit</strong></h3>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pogoSlider-slide" style="background-image:url({% static 'images/slide_img.png' %});">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="slide_text white_fonts">
+                                        <h3>Invest & Grow<br><strong>mutual funds</strong></h3>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pogoSlider-slide" style="background-image:url({% static 'images/slide_img.png' %});">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="slide_text white_fonts">
+                                        <h3>Invest and Grow<br><strong>Stocks</strong></h3>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="full text_align_right_img">
+                        <img src="{% static 'images/img1.png' %}" alt="#" />
+                    </div>
+                </div>
+                <div class="col-md-6 layout_padding">
+                    <div class="full paddding_left_15">
+                        <div class="heading_main text_align_left">
+						   <h2><span class="theme_color">Welcome</span> To FinTrans</h2>	
+                        </div>
+                    </div>
+                    <div class="full paddding_left_15">
+                        <p>In past few Years various equity based money has entered the market and also various new Cryptocurrency have been introduced.So the common platform where user can deal with all these equity based money needs to be introduced in market where all the Financial Transactions are carried out securely using Multi Factor Authentication in cloud Environment.</p>
+                    </div>
+                    <div class="full paddding_left_15">
+                        <a class="main_bt" href="#">About more ></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section layout_padding about_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="full paddding_left_15">
+                        <div class="heading_main text_align_left">
+                           <h2>Services</h2>   
+                        </div>
+                    </div> 
+                </div>  
+            </div>
+            <div class="icon">
+                <a class=" cur-po animated fadeInUp" href="/mutual-funds">
+                    <img class="icon_image" src="{% static 'images/l1.png' %} ">
+                    <div class="icon_text"><b>Mutual Funds</b></div>
+                </a>
+            </div>
+            <div class="icon">
+                <a class=" cur-po animated fadeInUp" href="/mutual-funds">
+                    <img class="icon_image" src="{% static 'images/l2.png' %} ">
+                    <div class="icon_text"><b>Stock Market</b></div>
+                </a>
+            </div>
+            <div class="icon">
+                <a class=" cur-po animated fadeInUp" href="/mutual-funds">
+                    <img class="icon_image" src="{% static 'images/l3.png' %}">
+                    <div class="icon_text"><b>Cryptocurrency</b></div>
+                </a>
+            </div>
+            <div class="icon">
+                <a class=" cur-po animated fadeInUp" href="/mutual-funds">
+                    <img class="icon_image" src="{% static 'images/l4.png' %}">
+                    <div class="icon_text"><b>Fixed Deposit</b></div>
+                </a>
+            </div>  
+        </div>
+    </div>
+    
+
+    <div class="section layout_padding about_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="full paddding_left_15">
+                        <div class="heading_main text_align_left">
+                           <h2>About</h2>    
+                        </div>
+                    </div>
+                    <div class="full paddding_left_15">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                    </div>
+                    <div class="full paddding_left_15">
+                        <a class="main_bt" href="#">Read More ></a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="full text_align_right_img">
+                        <img src="{% static 'images/img3.png' %}" alt="#" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="section layout_padding padding_top_0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="full">
+                        <div class="heading_main text_align_center">
+                           <h2><span class="theme_color"></span>Contact</h2>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="section contact_form">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-12 offset-lg-3">
+                    <div class="full">
+                        <form class="contact_form_inner" action="#">
+                            <fieldset>
+                                <div class="field">
+                                    <input type="text" name="name" placeholder="Your name" />
+                                </div>
+                                <div class="field">
+                                    <input type="email" name="email" placeholder="Email" />
+                                </div>
+                                <div class="field">
+                                    <input type="text" name="phone_no" placeholder="Phone number" />
+                                </div>
+                                <div class="field">
+                                    <textarea placeholder="Message"></textarea>
+                                </div>
+                                <div class="field center">
+                                    <button>SEND</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <footer class="footer-box">
+        <div class="container">
+            <div class="row">
+               <div class="col-md-12 white_fonts">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                            <div class="full">
+                                <img class="img-responsive" src="{% static 'images/logo-2.png' %}" alt="#" />
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                            <div class="full">
+                                <div class="footer_blog full white_fonts">
+                             <h3>Address</h3>
+                             <p>000, XYZ, abcd</p>
+                             <div class="newsletter_form">
+                                <form action="#">
+                                   <input type="email" placeholder="Your Email" name="#" required="">
+                                   <button>Submit</button>
+                                </form>
+                             </div>
+                         </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                            <div class="full">
+                                <div class="footer_blog full white_fonts">
+                             <h3>Contact us</h3>
+                             <ul class="full">
+                               <li><img src="{% static 'images/i5.png' %}"><span>London 145<br>United Kingdom</span></li>
+                               <li><a href="mailto:support@fintrans.com"><img src="{% static 'images/i6.png' %}"><span>support@fintrans.com</span></a></li>
+                               <li><img src="{% static 'images/i7.png' %}"><span>+0000000000</span></li>
+                             </ul>
+                         </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <center>
+                                <p class="crp mt-5">FinTrans © 2021 | Designed by Group 06</p>
+                            </center> 
+                        </div>
+					</div>
+                </div>
+			 </div>
+        </div>
+    </footer>
+
+    <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
+
+    <!-- ALL JS FILES -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- ALL PLUGINS -->
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.pogo-slider.min.js' %}"></script>
+    <script src="{% static 'js/slider-index.js' %}"></script>
+    <script src="{% static 'js/smoothscroll.js' %}"></script>
+    <script src="{% static 'js/form-validator.min.js' %}"></script>
+    <script src="{% static 'js/contact-form-script.js' %}"></script>
+    <script src="{% static 'js/isotope.min.js' %}"></script>
+    <script src="{% static 'js/images-loded.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+	<script>
+
+(function ($) {
+	$.fn.countTo = function (options) {
+		options = options || {};
+		
+		return $(this).each(function () {
+			var settings = $.extend({}, $.fn.countTo.defaults, {
+				from:            $(this).data('from'),
+				to:              $(this).data('to'),
+				speed:           $(this).data('speed'),
+				refreshInterval: $(this).data('refresh-interval'),
+				decimals:        $(this).data('decimals')
+			}, options);
+			
+			// how many times to update the value, and how much to increment the value on each update
+			var loops = Math.ceil(settings.speed / settings.refreshInterval),
+				increment = (settings.to - settings.from) / loops;
+			
+			// references & variables that will change with each update
+			var self = this,
+				$self = $(this),
+				loopCount = 0,
+				value = settings.from,
+				data = $self.data('countTo') || {};
+			
+			$self.data('countTo', data);
+			
+			// if an existing interval can be found, clear it first
+			if (data.interval) {
+				clearInterval(data.interval);
+			}
+			data.interval = setInterval(updateTimer, settings.refreshInterval);
+			
+			// initialize the element with the starting value
+			render(value);
+			
+			function updateTimer() {
+				value += increment;
+				loopCount++;
+				
+				render(value);
+				
+				if (typeof(settings.onUpdate) == 'function') {
+					settings.onUpdate.call(self, value);
+				}
+				
+				if (loopCount >= loops) {
+					// remove the interval
+					$self.removeData('countTo');
+					clearInterval(data.interval);
+					value = settings.to;
+					
+					if (typeof(settings.onComplete) == 'function') {
+						settings.onComplete.call(self, value);
+					}
+				}
+			}
+			
+			function render(value) {
+				var formattedValue = settings.formatter.call(self, value, settings);
+				$self.html(formattedValue);
+			}
+		});
+	};
+	
+	$.fn.countTo.defaults = {
+		from: 0,               // the number the element should start at
+		to: 0,                 // the number the element should end at
+		speed: 1000,           // how long it should take to count between the target numbers
+		refreshInterval: 100,  // how often the element should be updated
+		decimals: 0,           // the number of decimal places to show
+		formatter: formatter,  // handler for formatting the value before rendering
+		onUpdate: null,        // callback method for every time the element is updated
+		onComplete: null       // callback method for when the element finishes updating
+	};
+	
+	function formatter(value, settings) {
+		return value.toFixed(settings.decimals);
+	}
+}(jQuery));
+
+jQuery(function ($) {
+  // custom formatting example
+  $('.count-number').data('countToOptions', {
+	formatter: function (value, options) {
+	  return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+	}
+  });
+  
+  // start all the timers
+  $('.timer').each(count);  
+  
+  function count(options) {
+	var $this = $(this);
+	options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+	$this.countTo(options);
+  }
+});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+{% extends 'base.html' %} 
+
+{% block title %}
+FinTrans | {{user}}'s Fixed Deposit
+{% endblock %} 
+
+{% load static %}
+
+{% block css_files %}
+<link href="{% static 'css/table.css' %}" rel="stylesheet" />
+{% endblock %} 
+
+{% block content %}
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+  
+
+    <div class="row">
+
+        <!-- Area Chart -->
+        <div class="dash_table">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div
+                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Please enter Backup Code to verify your transaction of Rupees {{amount}} and Quantity of {{quantity}} Stocks</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div class="container p-0">
+<div class="card px-4">
+<p class="h8 py-3">Enter valid Backup Code for secure transaction</p>
+<div style="color:red">{{Error}}</div>
+<div style="color:green">{{Success}}</div>
+<div class="row gx-3">
+<div class="col-12">
+<div class="d-flex flex-column">
+    <form method="POST" action="{% url 'backupcodeverification' %}">
+        {% csrf_token %}
+        <input type="hidden" name="amount" value={{amount}}> 
+        <input type="hidden" name="accountNo" value={{accountnumber}}>
+    <p class="text mb-1">Enter Backup Code 1</p> <input class="form-control-otp mb-3" type="text" placeholder="Backup Code 1" name="code1" required>
+    <p class="text mb-1">Enter Backup Code 3</p> <input class="form-control-otp mb-3" type="text" placeholder="Backup Code 3" name="code3" required>
+    
+</div>
+</div>
+
+<div class="col-6">
+    <button type="submit" class="btn btn-primary mb-3">
+        <span class="ps-3">Proceed</span>
+    </button>
+</div>
+<div class="col-6">
+    <a class="btn btn-primary mb-3" href="{% url 'profile' %}">Cancel</span></a>
+</div>
+</form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Row -->
+  
+</div>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %} 
+
+{% block title %}
+FinTrans | OTP Verification
+{% endblock %} 
+
+{% load static %}
+
+{% block css_files %}
+<link href="{% static 'css/table.css' %}" rel="stylesheet" />
+{% endblock %} 
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="dash_table">
+            <div class="card shadow mb-4">
+                <div
+                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Please Check Your Email and Complete Your Transaction!</h6>
+                </div>
+                <!-- Card Body -->
+                <form action="{% url 'otpverification' %}" method="POST">
+                    {% csrf_token %}
+                <div class="card-body">
+                    <div class="container p-0">
+                    <div class="card px-4">
+                    <p class="h8 py-3">Enter valid OTP for transaction of {{amount}} Rupees</p>
+                    <div class="row gx-3">
+                    <div class="col-12">    
+                    <div class="d-flex flex-column">
+                    <input class="form-control-otp mb-3" type="text" name="otp" placeholder="Please enter OTP" required>
+                    <input type="hidden" name="amount" value={{amount}}>
+                    <input type="hidden" name="user" value={{user}}>
+                    <input type="hidden" name="accountNo" value={{accountnumber}}>
+                </div>
+            </div>
+            <div class="col-6">
+                <button type="submit" class="btn btn-primary mb-3">
+                    <span class="ps-3">Proceed</span>
+                </button>
+            </div>
+            <div class="col-6">
+                <a class="btn btn-primary mb-3" href="{% url 'profile' %}">Cancel</span></a>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block title %}
+FinTrans | {{user}}'s CryptoCurrency Investment {% endblock %}
+
+{% load static %}
+
+{% block css_files %}
+<link href="{% static 'css/table.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">CryptoCurrency</h1>
+  </div>
+
+  <div class="row">
+    <div class="dash_table">
+      <div class="card shadow mb-4">
+        <div
+          class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+        >
+          <h6 class="m-0 font-weight-bold text-primary">CryptoCurrency Rate</h6>
+        </div>
+        <div class="card-body">
+          <table>
+            <thead>
+              <tr>
+                <th>CryptoCurrency Name</th>
+                <th>Today's Rate</th>
+                <th>Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <form method="POST" {% url 'cryptocurrency' %}>
+                {% csrf_token %}
+              <tr>
+                <td>{{crypto.0}}</td>
+                <td>{{price.0}}</td>
+                <input type="hidden" name="price" value={{price.0}} >
+                <td><input onkeydown="return False" type="number" name="quantity" value="1" min="1"/></td>
+                <td><button class="td_button" role="button">Buy</button></td>
+              </tr>
+              </form>
+              <form method="POST" {% url 'cryptocurrency' %}>
+                {% csrf_token %}
+              <tr>
+                <td>{{crypto.1}}</td>
+                <td>{{price.1}}</td>
+                <input type="hidden" name="price" value={{price.1}} >
+                <td><input onkeydown="return false" type="number" name="quantity" value="1" min="1"/></td>
+                <td><button class="td_button" role="button">Buy</button></td>
+              </tr>
+              </form>
+              <form method="POST" {% url 'cryptocurrency' %}>
+                {% csrf_token %}
+              <tr>
+                <td>{{crypto.2}}</td>
+                <td>{{price.2}}</td>
+                <input type="hidden" name="price" value={{price.2}} >
+                <td><input onkeydown="return false" type="number" name="quantity" value="1" min="1"/></td>
+                <td><button class="td_button" role="button">Buy</button></td>
+              </tr>
+              </form>
+              <form method="POST" {% url 'cryptocurrency' %}>
+                {% csrf_token %}
+              <tr>
+                <td>{{crypto.3}}</td>
+                <td>{{price.3}}</td>
+                <input type="hidden" name="price" value={{price.3}} >
+                <td><input onkeydown="return false" type="number" name="quantity" value="1" min="1"/></td>
+                <td><button class="td_button" role="button">Buy</button></td>
+              </tr>
+              </form>
+              <form method="POST" {% url 'cryptocurrency' %}>
+                {% csrf_token %}
+              <tr>
+                <td>{{crypto.4}}</td>
+                <td>{{price.4}}</td>
+                <input type="hidden" name="price" value={{price.4}} >
+                <td><input onkeydown="return false" type="number" name="quantity" value="1" min="1"/></td>
+                <td><button class="td_button" role="button">Buy</button></td>
+              </tr>
+              </form>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

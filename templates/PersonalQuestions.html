@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+<style>
+body  {
+  background-image: url("{% static 'images/logo-2.png' %}") no-repeat center center fixed;;
+}
+</style>
+<title>{{user}}'s Profile</title>
+</head>
+<body>
+
+<a href="#modal-opened" class="link-1" id="modal-closed" >Tap and Answer Some Security Questions!!</a>
+<link rel="stylesheet" href="{% static 'css/modal.css' %}">
+<div class="modal-container" id="modal-opened">
+  <div class="modal">
+
+    <div class="modal__details">
+      <h1 class="modal__title">Security Questions</h1>
+      <p class="modal__description">This questions are for security purpose</p>
+    </div>
+
+    <div>
+        <form action="{% url 'profile' %}" method="POST">
+            {% csrf_token %}
+          <label for="fname"><h2>Your GrandMa's favorite food dish?</h2></label>
+          <input type="text" id="fname" name="dish" placeholder="Your Answer..">
+      
+          <label for="lname"><h2>What is your Mother's middle name?</h2></label>
+          <input type="text" id="lname" name="middlename" placeholder="Your Answer..">
+      
+          <label for="country"><h2>In which city Your Father was born?</h2></label>
+          <input type="text" id="lname" name="city" placeholder="Your Answer..">
+
+          <label for="pnumber"><h2>What is your phone number?</h2></label>
+          <input type="text" id="lname" name="pnumber" placeholder="Your Answer..">
+        
+          <input type="submit" value="Save Response">
+          <a href="#modal-closed" class="link-2"></a>
+        </form>
+      </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+

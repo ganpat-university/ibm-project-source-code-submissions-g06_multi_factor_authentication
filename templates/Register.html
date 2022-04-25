@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from preview.colorlib.com/theme/bootstrap/login-form-03/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Jan 2022 12:44:30 GMT -->
+<head>
+
+    {% load static %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'all.css' %}" />
+<link rel="icon" href="{% static 'images/sym.png' %}" type="image/png">
+
+
+<title>Register | FinTrans</title>
+<script>(function(w,d){!function(e,t,r,a,s){e[r]=e[r]||{},e[r].executed=[],e.zaraz={deferred:[]};var n=t.getElementsByTagName("title")[0];e[r].c=t.cookie,n&&(e[r].t=t.getElementsByTagName("title")[0].text),e[r].w=e.screen.width,e[r].h=e.screen.height,e[r].j=e.innerHeight,e[r].e=e.innerWidth,e[r].l=e.location.href,e[r].r=t.referrer,e[r].k=e.screen.colorDepth,e[r].n=t.characterSet,e[r].o=(new Date).getTimezoneOffset(),//
+e[s]=e[s]||[],e.zaraz._preTrack=[],e.zaraz.track=(t,r)=>e.zaraz._preTrack.push([t,r]),e[s].push({"zaraz.start":(new Date).getTime()});var i=t.getElementsByTagName(a)[0],o=t.createElement(a);o.defer=!0,o.src="../../../cdn-cgi/zaraz/sd41d.js?"+new URLSearchParams(e[r]).toString(),i.parentNode.insertBefore(o,i)}(w,d,"zarazData","script","dataLayer");})(window,document);</script></head>
+<body>
+<div class="half">
+<div class="bg order-1 order-md-2" style="background-image:url({% static 'images/bg.jpg' %})"></div>
+<div class="contents order-2 order-md-1">
+<div class="container">
+<div class="row align-items-center justify-content-center">
+<div class="col-md-6">
+<div class="form-block">
+<div class="text-center mb-5">
+<h3>Register to <strong>FinTrans</strong></h3>
+
+</div>
+<form action="{% url 'register' %}" method="post">
+    {% csrf_token %}
+<h5 class="text-danger">{{error}}</h5>
+<h5 class="text-success">{{success}}</h5>
+<div class="form-group first">
+    <label for="fullname"><label for="fullname">Password Criteria:</label><br>
+    <h8>The password must meet the below requirements:<br>
+    Minimum of 8 characters<br>
+    Maximum of 15 characters<br>
+    Must have one lowercase alphabetical character: a-z<br>
+    Must have one alphabetical character of Upper Case: A-Z<br>
+    Must have one number between 0-9<br>
+    Must have one special character from .!@#$%^&*() <br></h8>
+</div>
+<div class="form-group first">
+    <label for="fullname">User Name</label>
+    <input type="text" class="form-control" placeholder="Your UserName" id="fullname" name="username" required>
+</div>
+<div class="form-group first">
+    <label for="email">Email ID</label>
+    <input type="text" class="form-control" placeholder="your-email@gmail.com" id="email" name="email" required>
+</div>
+<div class="form-group last mb-3">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" placeholder="Your Password" id="password" name="password" required>
+</div>
+<div class="form-group last mb-3">
+    <label for="re-password">Confirm Password</label>
+    <input type="password" class="form-control" placeholder="Confirm Your Password" id="re-password" name="confirm_password" required>
+</div>
+<div class="already-account">
+    <span class="ml-auto"><a href="{% url 'login' %}" class="already-account">Already have an account?</a></span>
+</div>
+<input type="submit" value="Register" class="btn btn-block btn-primary">
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script><script>eval(mod_pagespeed_RSFvhpwpk0);</script>
+</body>
+<footer class="footer-distributed">
+    <div class="footer-left">
+        <h3><a href="{% url 'home' %}"><img src="{% static 'images/logo-2.PNG' %}"></a></h3>
+            <p class="footer-company-name" ><span>FinTrans © 2022</span></p>
+    </div>
+    <div class="footer-center">
+        <div>
+            <h4>Contact Us</h4>
+            <p><a href="mailto:support@fintrans.com">support@fintrans.com</a>
+            <p><span>00000 00000</span></p>
+            </p>
+        </div>
+    </div>
+</footer>
+</html>

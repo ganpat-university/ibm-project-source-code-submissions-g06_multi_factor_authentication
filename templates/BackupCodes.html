@@ -1,0 +1,78 @@
+{% extends 'base.html' %} {% block title %} FinTrans | {{user}}'s Stocks
+Investment {% endblock %} {% load static %} {% block css_files %}
+<link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet" />
+<link href="{% static 'css/table.css' %}" rel="stylesheet" />
+{% endblock %} {% block content %}
+<div class="container-fluid">
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Backup Codes</h1>
+  </div>
+
+  <div class="row">
+    <!-- Area Chart -->
+    <div class="dash_table">
+      <div class="card shadow mb-4">
+        <!-- Card Header - Dropdown -->
+        <div
+          class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+        >
+          <h6 class="m-0 font-weight-bold text-primary">
+            Find your Backup Codes Here
+          </h6>
+        </div>
+        <!-- Card Body -->
+        <div class="card-body">
+          <div class="container p-0">
+            <div class="card px-4">
+              <p class="h8 py-3">Save your backup codes in a safe place.</p>
+              <div class="row gx-3">
+                <div class="col-12">
+                  <div class="d-flex flex-column">
+                    <p class="text mb-1">Code 1</p>
+                    <input
+                      class="form-control-otp mb-3"
+                      type="text"
+                      value={{backup1}}
+                      readonly
+                    />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="d-flex flex-column">
+                    <p class="text mb-1">Code 2</p>
+                    <input
+                      class="form-control-otp mb-3"
+                      type="text"
+                      value={{backup2}}
+                      readonly
+                    />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="d-flex flex-column">
+                    <p class="text mb-1">Code 3</p>
+                    <input
+                      class="form-control-otp mb-3"
+                      type="text"
+                      value={{backup3}}
+                      readonly
+                    />
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="btn btn-primary mb-3">
+                    <span class="ps-3">Copy | </span>
+                    <span class="fas fa-copy"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

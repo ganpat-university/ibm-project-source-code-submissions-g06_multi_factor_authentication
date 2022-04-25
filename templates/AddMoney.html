@@ -1,0 +1,112 @@
+{% extends 'base.html' %} {% block title %} FinTrans | {{user}}'s Add Money 
+{% endblock %} {% load static %} {% block css_files %}
+<link href="{% static 'css/table.css' %}" rel="stylesheet" />
+{% endblock %} {% block content %}
+<div class="container-fluid">
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Add Money</h1>
+  </div>
+
+  <div class="row">
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div
+                class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+              >
+                Account Balance
+              </div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">
+                {% if accountbalance  %}
+                    {{accountbalance}} &#8377;
+                {% else %}
+                    No Balance
+                {% endif %}
+              </div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-rupee-sign fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="dash_table">
+      <div class="card shadow mb-4">
+        <div
+          class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+        >
+          <h6 class="m-0 font-weight-bold text-primary">Add Money</h6>
+        </div>
+
+        <div class="card-body">
+          <div class="container p-0">
+            <div style="color:red">{{Error}}</div>
+            <div class="card px-4">
+              <form action="{% url 'addmoney' %}" method="POST">
+                {% csrf_token %}
+                <div class="row gx-3">
+                  <div class="col-12">
+                    <div class="d-flex flex-column">
+                      <p class="text mt-3 mb-1">User Name</p>
+                      <input
+                        class="form-control mb-3"
+                        type="text"
+                        readonly
+                        placeholder="Enter User Name"
+                        value="{{user}}"
+                        name="username"
+                      >
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="d-flex flex-column">
+                      <p class="text mb-1">Account Number</p>
+                      <input
+                        class="form-control mb-3"
+                        type="text"
+                        readonly
+                        placeholder="Enter Account Number"
+                        value="{{accountnumber}}"
+                        name="accountnumber"
+                      >
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="d-flex flex-column">
+                      <p class="text mb-1">Amount (In Rupees)</p>
+                      <input
+                        class="form-control mb-3"
+                        type="number"
+                        placeholder="Enter Amount"
+                        min="1"
+                        value="1"
+                        name = "amount"
+                      >
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <button type="submit" class="btn btn-primary mb-3">
+                      <span class="ps-3">Deposit</span>
+                    </button>
+                  </div>
+                  <div class="col-6">
+                    <a href="{% url 'addmoney' %}" class="btn btn-danger mb-3">
+                      <span class="ps-3">Cancel</span>
+                    </a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
